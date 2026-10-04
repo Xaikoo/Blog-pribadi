@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/writing",
   },
+  openGraph: {
+    type: "website",
+    title: "Writing",
+    description: "Arsip tulisan Xaiko tentang proyek, eksperimen, teknologi, dan proses.",
+    url: "/writing",
+    siteName: "Xaiko",
+  },
+  twitter: {
+    card: "summary",
+    title: "Writing",
+    description: "Arsip tulisan Xaiko tentang proyek, eksperimen, teknologi, dan proses.",
+  },
 };
 
 export default function WritingPage() {
