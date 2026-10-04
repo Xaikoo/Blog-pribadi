@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getPosts } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "Writing",
+  description: "Arsip tulisan Xaiko tentang proyek, eksperimen, teknologi, dan proses.",
+  alternates: {
+    canonical: "/writing",
+  },
+};
 
 export default function WritingPage() {
   const posts = getPosts();
