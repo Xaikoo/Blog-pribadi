@@ -177,6 +177,10 @@ a:focus-visible {
   padding-bottom: 20px;
 }
 
+.section-heading .eyebrow {
+  margin: 0;
+}
+
 .section-heading h2 {
   font-size: clamp(2rem, 4vw, 3.6rem);
   line-height: 1;
@@ -259,6 +263,12 @@ a:focus-visible {
   min-width: 0;
 }
 
+.writing-item,
+.post-excerpt,
+.article {
+  overflow-wrap: anywhere;
+}
+
 .post-meta {
   margin: 0 0 12px;
   color: var(--muted);
@@ -269,7 +279,8 @@ a:focus-visible {
   overflow-wrap: anywhere;
 }
 
-.writing-item h2 {
+.writing-item h2,
+.writing-item h3 {
   margin: 0 0 14px;
   max-width: 900px;
   font-size: clamp(2rem, 4vw, 3.6rem);
@@ -277,11 +288,13 @@ a:focus-visible {
   letter-spacing: -0.045em;
 }
 
-.writing-item h2 a {
+.writing-item h2 a,
+.writing-item h3 a {
   text-decoration: none;
 }
 
-.writing-item h2 a:hover {
+.writing-item h2 a:hover,
+.writing-item h3 a:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
