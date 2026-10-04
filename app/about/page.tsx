@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/about",
   },
+  openGraph: {
+    type: "website",
+    title: "About",
+    description: "Tentang blog pribadi Xaiko dan prinsip di balik ruang editorial ini.",
+    url: "/about",
+    siteName: "Xaiko",
+  },
+  twitter: {
+    card: "summary",
+    title: "About",
+    description: "Tentang blog pribadi Xaiko dan prinsip di balik ruang editorial ini.",
+  },
 };
 
 export default function AboutPage() {
