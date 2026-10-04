@@ -10,9 +10,6 @@ export const metadata: Metadata = {
     template: "%s — Xaiko",
   },
   description: "Blog pribadi Xaiko — catatan, proyek, dan hal-hal yang layak disimpan.",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     siteName: "Xaiko",
