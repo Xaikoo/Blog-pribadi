@@ -9,6 +9,7 @@ on:
       - package-lock.json
       - Dockerfile
       - .nvmrc
+      - tailwind.config.js
       - .github/workflows/phase1-validation.yml
 
 permissions:
