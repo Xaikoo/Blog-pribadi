@@ -16,35 +16,36 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Extract and arrange ZIP contents
+      - name: Unzip and arrange project
         shell: bash
         run: |
           set -euo pipefail
 
           ZIP="tukesh.in-main.zip"
           TMP=".tukesh-extract"
+          ROOT="$TMP/tukesh.in-main"
 
           test -f "$ZIP"
 
           rm -rf "$TMP"
           mkdir -p "$TMP"
 
-          echo "Extracting archive exactly as packaged..."
+          echo "Unzipping archive..."
           unzip -q "$ZIP" -d "$TMP"
 
-          TOP_LEVEL_DIR="$TMP/tukesh.in-main"
-          test -d "$TOP_LEVEL_DIR"
+          test -d "$ROOT"
 
-          echo "Replacing repository working tree with extracted project..."
+          echo "Arranging extracted project at repository root..."
+          cp -a "$ROOT"/. .
 
-          find . -mindepth 1 -maxdepth 1             ! -name ".git"             ! -name "$TMP"             ! -name "$ZIP"             -exec rm -rf {} +
-
-          cp -a "$TOP_LEVEL_DIR"/. .
-
+          echo "Removing temporary import files..."
           rm -rf "$TMP"
           rm -f "$ZIP"
 
-      - name: Commit extracted project
+          echo "Removing temporary workflow..."
+          rm -f ".github/workflows/extract-zip.yml"
+
+      - name: Commit arranged project
         shell: bash
         run: |
           set -euo pipefail
@@ -59,5 +60,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "chore: extract project archive to repository root"
+          git commit -m "chore: extract and arrange project"
           git push origin HEAD:main
