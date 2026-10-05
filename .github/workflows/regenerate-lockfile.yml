@@ -7,6 +7,7 @@ on:
     paths:
       - package.json
       - package-lock.json
+      - .github/workflows/regenerate-lockfile.yml
 
 permissions:
   contents: write
