@@ -13,19 +13,38 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Extract ZIP without modification
+      - name: Extract and arrange ZIP contents
         shell: bash
         run: |
           set -euo pipefail
 
           ZIP="tukesh.in-main.zip"
+          TMP=".tukesh-extract"
 
           test -f "$ZIP"
 
-          unzip -q "$ZIP"
+          rm -rf "$TMP"
+          mkdir -p "$TMP"
 
-      - name: Commit extracted files
+          echo "Extracting archive exactly as packaged..."
+          unzip -q "$ZIP" -d "$TMP"
+
+          TOP_LEVEL_DIR="$TMP/tukesh.in-main"
+          test -d "$TOP_LEVEL_DIR"
+
+          echo "Replacing repository working tree with extracted project..."
+
+          find . -mindepth 1 -maxdepth 1             ! -name ".git"             ! -name "$TMP"             ! -name "$ZIP"             -exec rm -rf {} +
+
+          cp -a "$TOP_LEVEL_DIR"/. .
+
+          rm -rf "$TMP"
+          rm -f "$ZIP"
+
+      - name: Commit extracted project
         shell: bash
         run: |
           set -euo pipefail
@@ -36,9 +55,9 @@ jobs:
           git add -A
 
           if git diff --cached --quiet; then
-            echo "No extracted changes detected."
+            echo "No changes detected."
             exit 0
           fi
 
-          git commit -m "chore: extract project archive"
+          git commit -m "chore: extract project archive to repository root"
           git push origin HEAD:main
