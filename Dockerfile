@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy package.json and package-lock.json to the working directory
 COPY package.json package-lock.json ./
 
-# Install dependencies from the committed lockfile
+# Install dependencies from the committed lockfile (Phase 1 reproducibility gate)
 RUN npm ci
 
 # Copy the rest of the application code to the working directory
