@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowUpRight, FileText, MessageSquareText } from "lucide-react";
+import { ArrowUpRight, FileText, MapPin, MessageSquareText } from "lucide-react";
 
 import { SOCIALS } from "@/data/socials";
 import { FEATURED_PROJECTS, type Project } from "@/data/projects";
@@ -104,6 +104,10 @@ export default function Home() {
                   "Always learning, always shipping.",
                 ]}
               />
+            </p>
+            <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground dark:text-gray-400">
+              <MapPin className="size-3.5" aria-hidden="true" />
+              {siteMetadata.location.city}, {siteMetadata.location.country}
             </p>
           </div>
         </PanelHeader>
