@@ -162,7 +162,7 @@ export default function Home() {
           <div className="lg:w-1/3 flex justify-center lg:justify-end lg:mt-0 mt-6">
             <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10 outline outline-2 outline-offset-2 outline-sky-500/30 dark:outline-sky-400/30 max-w-sm mx-auto">
               <Image
-                src="/assets/tukesh-profile.jpeg"
+                src="/assets/ErikKurniawan-profile.jpeg"
                 alt={`${siteMetadata.author} — avatar`}
                 priority
                 fetchPriority="high"
