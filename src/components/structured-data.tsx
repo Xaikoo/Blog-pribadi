@@ -51,7 +51,8 @@ export function StructuredData({ type }: StructuredDataProps) {
     },
     address: {
       "@type": "PostalAddress",
-      addressCountry: "IN",
+      addressLocality: siteMetadata.location.city,
+      addressCountry: siteMetadata.location.countryCode,
     },
   };
 
