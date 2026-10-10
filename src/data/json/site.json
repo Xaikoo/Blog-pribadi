@@ -1,6 +1,11 @@
 {
   "title": "Erik Kurniawan",
   "author": "Erik Kurniawan",
+  "location": {
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "countryCode": "ID"
+  },
   "siteUrl": "https://xaiko.my.id",
   "socialBanner": "/assets/social-banner.png",
   "description": "Erik Kurniawan — Pengembang web dan pembuat proyek digital.",
