@@ -1,122 +1,43 @@
 import { siteMetadata } from "@/data/siteMetadata";
 
 type StructuredDataType = "person" | "website" | "profilePage";
-
-interface StructuredDataProps {
-  type: StructuredDataType;
-}
+interface StructuredDataProps { type: StructuredDataType }
 
 export function StructuredData({ type }: StructuredDataProps) {
-  const personSchema = {
+  const sameAs = [siteMetadata.social.githubLink, siteMetadata.social.linkedinLink, siteMetadata.social.x].filter(Boolean);
+  const person = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${siteMetadata.siteUrl}/#person`,
     name: siteMetadata.author,
     url: siteMetadata.siteUrl,
-    email: siteMetadata.social.email,
-    image: `${siteMetadata.siteUrl}/assets/profile.jpg`,
-    jobTitle: "Software Engineer & AI Developer Tools",
-    description:
-      "Frontend Developer & AI Engineer creating responsive web applications and AI-powered solutions",
-    sameAs: [
-      siteMetadata.social.githubLink,
-      siteMetadata.social.linkedinLink,
-      siteMetadata.social.x,
-    ],
-    knowsAbout: [
-      "AI Developer Tools",
-      "TypeScript",
-      "Go",
-      "React",
-      "Next.js",
-      "LLMs",
-      "GitHub Actions",
-      "CLI",
-      "Code Review",
-      "Node.js",
-      "JavaScript",
-      "Web Development",
-      "Full Stack Development",
-      "Software Engineering",
-      "MongoDB",
-      "Express.js",
-      "Next.js",
-      "Tailwind CSS",
-      "Python",
-      "Open Source",
-    ],
-    alumniOf: {
-      "@type": "EducationalOrganization",
-      name: "GL BAJAJ Institute of Technology & Management",
-      sameAs: "https://www.glbajaj.edu.in/",
-    },
+    image: `${siteMetadata.siteUrl}/assets/ErikKurniawan-profile.jpeg`,
+    description: siteMetadata.description,
+    sameAs,
     address: {
       "@type": "PostalAddress",
       addressLocality: siteMetadata.location.city,
       addressCountry: siteMetadata.location.countryCode,
     },
   };
-
-  const websiteSchema = {
+  const website = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteMetadata.title,
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
-    author: {
-      "@type": "Person",
-      name: siteMetadata.author,
-      url: siteMetadata.siteUrl,
-    },
-    publisher: {
-      "@type": "Person",
-      name: siteMetadata.author,
-    },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteMetadata.siteUrl}/post?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
+    inLanguage: "id-ID",
+    author: { "@id": `${siteMetadata.siteUrl}/#person` },
+    publisher: { "@id": `${siteMetadata.siteUrl}/#person` },
   };
-
-  // Google Rich Results supports ProfilePage for personal/portfolio sites.
-  // See: https://developers.google.com/search/docs/appearance/structured-data/profile-page
-  const profilePageSchema = {
+  const profilePage = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    name: `${siteMetadata.author} — Portfolio`,
+    name: `Profil ${siteMetadata.author}`,
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
-    dateCreated: "2024-01-01T00:00:00+05:30",
-    dateModified: new Date().toISOString(),
-    mainEntity: {
-      "@type": "Person",
-      "@id": `${siteMetadata.siteUrl}/#person`,
-      name: siteMetadata.author,
-      url: siteMetadata.siteUrl,
-      image: `${siteMetadata.siteUrl}/assets/profile.jpg`,
-      jobTitle: "Frontend Developer & AI Engineer",
-      description: siteMetadata.pages.home.description,
-      sameAs: [
-        siteMetadata.social.githubLink,
-        siteMetadata.social.linkedinLink,
-        siteMetadata.social.x,
-      ],
-    },
+    mainEntity: person,
   };
-
-  const schemas = {
-    person: personSchema,
-    website: websiteSchema,
-    profilePage: profilePageSchema,
-  } as const;
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas[type]) }}
-    />
-  );
+  const schemas = { person, website, profilePage } as const;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas[type]) }} />;
 }
