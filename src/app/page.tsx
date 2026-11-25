@@ -127,15 +127,15 @@ export default function Home() {
         <PanelContent>
           <div className="lg:w-2/3 text-center lg:text-left">
             <p className="mt-2 text-gray-700 dark:text-gray-300">
-              I build modular plugins, custom scripts, and automation tools.
+              Saya mengembangkan plugin modular, skrip khusus, dan berbagai alat otomatisasi.
             </p>
             <p className="mt-4 text-gray-700 dark:text-gray-300">
-              Creator of <strong>Haimiya Multi Device</strong>, a WhatsApp bot
-              project focused on automation and customizable features.
+              Pembuat <strong>Haimiya Multi Device</strong>, sebuah proyek bot WhatsApp
+              yang berfokus pada otomatisasi dan fitur-fitur yang dapat disesuaikan.
             </p>
             <p className="mt-4 text-gray-700 dark:text-gray-300">
-              Focused on <strong>JavaScript, Node.js, Lua, API Integration,
-              and Web Development.</strong>
+              Berfokus pada <strong>JavaScript, Node.js, Lua, integrasi API,
+              dan pengembangan web.</strong>
             </p>
 
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 mt-5">
