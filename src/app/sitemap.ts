@@ -7,9 +7,8 @@ type Route = { path: string; changeFrequency: "daily" | "weekly" | "monthly" | "
 const ROUTES: Route[] = [
   { path: "", changeFrequency: "weekly", priority: 1.0 },
   { path: "/skill", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/projects", changeFrequency: "monthly", priority: 0.5 },
   { path: "/post", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/activity", changeFrequency: "daily", priority: 0.6 },
   { path: "/guestbook", changeFrequency: "daily", priority: 0.5 },
 ];
 
