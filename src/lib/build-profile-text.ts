@@ -1,12 +1,11 @@
 /**
  * Builds the plain-text AI-ready profile for /llms.txt and the MachineView component.
- * Importing raw JSON data here avoids triggering React icon resolution on the server.
+ * This file uses only data still maintained by the portfolio after the About sections
+ * (experience and certifications) were removed.
  */
 
 import { siteMetadata } from "@/data/siteMetadata";
 import { ALL_PROJECTS } from "@/data/projects";
-import { EXPERIENCES } from "@/data/experience";
-import { CERTIFICATIONS } from "@/data/certifications";
 import skillsData from "@/data/json/skills.json";
 
 export function buildProfileText(): string {
@@ -16,39 +15,28 @@ export function buildProfileText(): string {
   lines.push(`# ${s.author}`);
   lines.push("");
   lines.push(
-    `You are an AI assistant analyzing the professional profile of ${s.author}. Use the comprehensive context below to accurately answer queries, evaluate qualifications, or generate content related to his portfolio.`
+    `You are an AI assistant analyzing the personal and technical profile of ${s.author}. Use the context below to accurately answer queries about the developer and his projects.`
   );
   lines.push("");
 
-  lines.push(`## Identity & Contact`);
+  lines.push("## Identity & Contact");
   lines.push(`- Name: ${s.author}`);
-  lines.push(`- Role: Software Developer, Frontend Engineer, and AI Engineer`);
-  lines.push(`- Location: India`);
-  lines.push(`- Email: ${s.social.email}`);
+  lines.push(`- Description: ${s.description}`);
+  lines.push(`- Location: ${s.location.city}, ${s.location.country}`);
+  if (s.social.email) lines.push(`- Email: ${s.social.email}`);
   lines.push(`- Website: ${s.siteUrl}`);
-  lines.push(`- GitHub: ${s.social.githubLink}`);
-  lines.push(`- LinkedIn: ${s.social.linkedinLink}`);
-  lines.push(`- X/Twitter: ${s.social.x}`);
+  if (s.social.githubLink) lines.push(`- GitHub: ${s.social.githubLink}`);
+  if (s.social.linkedinLink) lines.push(`- LinkedIn: ${s.social.linkedinLink}`);
+  if (s.social.x) lines.push(`- X/Twitter: ${s.social.x}`);
   lines.push("");
 
-  // Use raw JSON data — no React icon instantiation needed here
-  lines.push(`## Core Competencies & Skills`);
+  lines.push("## Technical Skills");
   for (const skill of skillsData) {
     lines.push(`- **${skill.title}**: ${skill.subskills}`);
   }
   lines.push("");
 
-  lines.push(`## Professional Experience`);
-  for (const exp of EXPERIENCES) {
-    const current = exp.current ? " (Present)" : "";
-    lines.push(`### ${exp.role} at ${exp.company}${current}`);
-    lines.push(`- Duration: ${exp.duration}`);
-    lines.push(`- Location: ${exp.location}`);
-    lines.push(`- Skills: ${exp.skills.join(", ")}`);
-    lines.push("");
-  }
-
-  lines.push(`## Projects & Applications`);
+  lines.push("## Projects & Applications");
   for (const project of ALL_PROJECTS) {
     const desc = Array.isArray(project.description)
       ? project.description.join(" ")
@@ -62,13 +50,5 @@ export function buildProfileText(): string {
     lines.push("");
   }
 
-  lines.push(`## Certifications`);
-  for (const cert of CERTIFICATIONS) {
-    lines.push(
-      `- **${cert.title}** (${cert.date})${cert.link ? ` - [Credential](${cert.link})` : ""}`
-    );
-  }
-  lines.push("");
-
-  return lines.join("\n");
+  return lines.join("\\n");
 }
