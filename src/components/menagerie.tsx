@@ -91,7 +91,7 @@ const LINES: Record<PetKind, Lines> = {
     ],
     idle: [
       "Dari sini aku bisa melihat semua PR.",
-      "Cuit: LGTM",
+      "Cuit: Sudah disetujui!",
       "Pengembangan berbasis cacing",
       "Biji-bijian saja, terima kasih — jangan tulang.",
     ],
