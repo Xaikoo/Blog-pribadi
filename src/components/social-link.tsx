@@ -7,6 +7,7 @@ export interface Props {
   icon: React.ElementType;
   children?: React.ReactNode;
   "aria-label"?: string;
+  iconClassName?: string;
 }
 
 export function SocialLink({
@@ -15,6 +16,7 @@ export function SocialLink({
   children,
   icon: Icon,
   "aria-label": ariaLabel,
+  iconClassName,
 }: Props) {
   return (
     <div className={`flex ${className || ""}`}>
@@ -26,7 +28,7 @@ export function SocialLink({
         className="group flex text-sm font-medium transition"
       >
         <Icon
-          className="group-hover:fill-primary h-6 w-6 flex-none fill-zinc-500 hover:fill-zinc-200 transition"
+          className={iconClassName || "group-hover:fill-primary h-6 w-6 flex-none fill-zinc-500 hover:fill-zinc-200 transition"}
           aria-hidden="true"
         />
         {children && <span className="ml-4">{children}</span>}
