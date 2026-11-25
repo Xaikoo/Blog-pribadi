@@ -12,7 +12,8 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#1D1E20',
     icons: [
       { src: '/favicon.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
-      { src: '/icons/xaiko-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+      { src: '/icons/xaiko-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+      { src: '/icons/xaiko-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
     ],
   }
 }
