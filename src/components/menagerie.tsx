@@ -16,95 +16,95 @@ type Lines = {
 const LINES: Record<PetKind, Lines> = {
   cat: {
     asleep: [
-      "shh. soft paws only.",
-      "dreaming of green builds",
-      "offline until further notice",
-      "five more minutes. maybe ten.",
+      "Ssst. Pelan-pelan, cakarku lembut.",
+      "Sedang bermimpi tentang build yang sukses",
+      "Sedang offline sampai waktu yang belum ditentukan",
+      "Lima menit lagi. Mungkin sepuluh.",
     ],
     fed: [
-      "perfection. ship it.",
-      "purr approved ✓",
-      "finally. quality fish.",
-      "you may keep coding.",
+      "Sempurna. Saatnya dirilis.",
+      "Disetujui dengan dengkuran ✓",
+      "Akhirnya. Ikan berkualitas.",
+      "Silakan lanjut ngoding.",
     ],
     idle: [
-      "I review PRs in silence",
-      "whiskers detect bugs",
-      "fish only. bones are for dogs.",
-      "the deploy can wait. pet me.",
+      "Aku meninjau PR dalam diam",
+      "Kumis ini mendeteksi bug",
+      "Aku hanya makan ikan. Tulang untuk anjing.",
+      "Deploy bisa menunggu. Elus aku dulu.",
     ],
     full: [
-      "full. dignity preserved.",
-      "one fish. hourly. policy.",
-      "later. I'm busy looking busy.",
+      "Sudah kenyang. Harga diri tetap terjaga.",
+      "Satu ikan setiap jam. Itu aturannya.",
+      "Nanti saja. Aku sedang sibuk terlihat sibuk.",
     ],
     carried: [
-      "put me down. gently.",
-      "I allow this. briefly.",
-      "unhand the QA lead",
-      "this is undignified. continue.",
+      "Turunkan aku. Pelan-pelan.",
+      "Aku izinkan. Untuk sementara.",
+      "Lepaskan kepala tim QA ini.",
+      "Ini merendahkan martabatku. Lanjutkan.",
     ],
   },
   dog: {
     asleep: [
-      "*happy snore*",
-      "dreaming of long walks",
-      "guarding the repo… eyes closed",
-      "zzz — fetch me later?",
+      "*mengorok bahagia*",
+      "Sedang bermimpi jalan-jalan jauh",
+      "Menjaga repo… sambil memejamkan mata",
+      "Zzz — lempar bola nanti, ya?",
     ],
     fed: [
-      "BEST DAY EVER!!",
-      "you. are. the best human.",
-      "bone acquired. joy unlocked.",
-      "10/10 would wag again",
+      "HARI TERBAIK SEPANJANG MASA!!",
+      "kamu. manusia. terbaik.",
+      "Tulang didapat. Kebahagiaan terbuka.",
+      "10/10, siap mengibaskan ekor lagi",
     ],
     idle: [
-      "who's a good engineer? YOU!",
-      "wanna go outside? or ship?",
-      "I believe in this commit",
-      "throw me a bone, literally",
+      "Siapa developer yang hebat? KAMU!",
+      "Mau jalan-jalan? Atau rilis proyek?",
+      "Aku percaya pada commit ini",
+      "Lemparkan tulang untukku, sungguhan.",
     ],
     full: [
-      "already ate! still happy!",
-      "*wags anyway*",
-      "thank you thank you thank you",
+      "Aku sudah makan! Tetap bahagia!",
+      "*ekor tetap bergoyang*",
+      "Terima kasih, terima kasih, terima kasih!",
     ],
     carried: [
-      "WHEEEE!",
-      "flying dog mode!",
-      "best walk and I'm not even walking",
-      "higher! higher! okay careful!",
+      "WUHUUU!",
+      "Mode anjing terbang!",
+      "Jalan-jalan terbaik, padahal aku tidak berjalan.",
+      "Lebih tinggi! Lagi! Oke, hati-hati!",
     ],
   },
   bird: {
     asleep: [
-      "*tucked in*",
-      "roosting. do not deploy.",
-      "night songs loading…",
-      "wings folded. hush.",
+      "*meringkuk nyaman*",
+      "Sedang bertengger. Jangan deploy.",
+      "Lagu malam sedang dimuat…",
+      "Sayap terlipat. Ssst.",
     ],
     fed: [
-      "seeds! yes!",
-      "peck peck — delight!",
-      "millet! my favourite PR snack",
-      "tiny bird. huge gratitude.",
+      "Biji-bijian! Hore!",
+      "Patuk patuk — lezat!",
+      "Jewawut! Camilan PR favoritku.",
+      "Burung kecil. Rasa terima kasih besar.",
     ],
     idle: [
-      "I see all the PRs from up here",
-      "chirp: LGTM",
-      "worm-driven development",
-      "seeds only, thanks — no bones",
+      "Dari sini aku bisa melihat semua PR.",
+      "Cuit: LGTM",
+      "Pengembangan berbasis cacing",
+      "Biji-bijian saja, terima kasih — jangan tulang.",
     ],
     full: [
-      "crop is full. tweet later.",
-      "stuffed. singing tomorrow.",
-      "no more seed. still cute though.",
+      "Tembolokku penuh. Nanti aku berkicau lagi.",
+      "Sudah kenyang. Besok aku bernyanyi lagi.",
+      "Tidak mau biji lagi. Tapi aku tetap lucu.",
     ],
     carried: [
-      "I can fly, you know",
-      "cheep — nice view!",
-      "gently, I'm mostly feathers",
-      "released? I'll allow it.",
+      "Aku bisa terbang, tahu!",
+      "Cuit — pemandangannya bagus!",
+      "Pelan-pelan, tubuhku hampir semuanya bulu.",
+      "Mau melepaskanku? Baiklah, kuizinkan.",
     ],
   },
 };
@@ -442,7 +442,7 @@ function Pet({
       ]
         .filter(Boolean)
         .join(" ")}
-      aria-label={`pet the ${kind}`}
+      aria-label={`Sentuh ${kind === "cat" ? "kucing" : kind === "dog" ? "anjing" : "burung"}`}
       data-pet={kind}
       role="button"
       tabIndex={0}
@@ -538,12 +538,12 @@ export function Menagerie() {
             registerFeed={registerFeed}
           />
         ))}
-        <div className="menagerie-controls" role="group" aria-label="Pet controls">
+        <div className="menagerie-controls" role="group" aria-label="Kontrol hewan">
           <button
             className={`feed${feedThrown ? " is-thrown" : ""}`}
             type="button"
-            aria-label="feed the pets"
-            title="feed the pets"
+            aria-label="Beri makan semua hewan"
+            title="Beri makan semua hewan"
             onClick={feedAll}
           >
             <svg aria-hidden="true" viewBox="0 0 22 12" className="feed__treat" fill="none">
@@ -559,9 +559,9 @@ export function Menagerie() {
           <button
             className={`feed-sound${soundOn ? " is-on" : ""}`}
             type="button"
-            aria-label={soundOn ? "mute pet sounds" : "unmute pet sounds"}
+            aria-label={soundOn ? "Matikan suara hewan" : "Nyalakan suara hewan"}
             aria-pressed={soundOn}
-            title={soundOn ? "mute sounds" : "unmute sounds"}
+            title={soundOn ? "Matikan suara" : "Nyalakan suara"}
             onClick={toggleSound}
           >
             {soundOn ? (
@@ -600,17 +600,17 @@ export function Menagerie() {
 
       <p className="menagerie-note">
         <span className="font-mono text-[11px] uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-          the office
+          teman-teman kecil
         </span>
         <span className="text-neutral-300 dark:text-neutral-700" aria-hidden="true">
           ·
         </span>
         <span className="text-sm text-gray-600 dark:text-gray-400">
-          <span className="font-medium text-gray-800 dark:text-gray-200">drag</span> anywhere
+          <span className="font-medium text-gray-800 dark:text-gray-200">seret</span> ke mana saja
           {" · "}
-          <span className="font-medium text-gray-800 dark:text-gray-200">tap</span> to feed
+          <span className="font-medium text-gray-800 dark:text-gray-200">ketuk</span> untuk memberi makan
           {" - "}
-          fish for the cat, a bone for the dog, seed for the bird.
+          ikan untuk kucing, tulang untuk anjing, dan biji-bijian untuk burung.
         </span>
       </p>
     </div>
