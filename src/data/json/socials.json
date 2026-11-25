@@ -8,5 +8,15 @@
     "label": "Instagram",
     "href": "https://www.instagram.com/reii_xy",
     "icon": "InstagramIcon"
+  },
+  {
+    "label": "WhatsApp",
+    "href": "https://wa.me/6281285237162",
+    "icon": "FaWhatsapp"
+  },
+  {
+    "label": "Email",
+    "href": "mailto:erik.kreatiff@gmail.com",
+    "icon": "FaEnvelope"
   }
 ]
