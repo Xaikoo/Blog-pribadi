@@ -99,9 +99,11 @@ export default function Home() {
             <p className="text-sm text-balance text-muted-foreground dark:text-gray-400 select-none">
               <Typewriter
                 phrases={[
-                  "Open Source Contributor",
-                  "Software Engineer",
-                  "Always learning, always shipping.",
+                  "Modular Plugin & Script Developer",
+                  "Creator of Haimiya Multi Device",
+                  "WhatsApp Bot Developer",
+                  "Automation & Integration Developer",
+                  "Digital Project Builder",
                 ]}
               />
             </p>
@@ -115,32 +117,35 @@ export default function Home() {
         <PanelContent className="lg:flex lg:flex-row lg:items-start gap-10">
           <div className="lg:w-2/3 text-center lg:text-left">
             <p className="mt-2 text-gray-700 dark:text-gray-300">
-              I&apos;m a software developer specializing in building scalable web
-              applications with clean and intuitive user interfaces using{" "}
-              <strong>React, TypeScript, and Node.js</strong>.
+              I build modular plugins, custom scripts, and practical digital tools
+              designed to make software more flexible, useful, and easier to
+              maintain. I enjoy turning ideas into reliable features and
+              well-structured projects.
             </p>
             <p className="mt-6 text-gray-700 dark:text-gray-300">
-              Currently, I&apos;m building{" "}
-              <a
-                href="https://github.com/Tukesh1/codexp-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-blue-700 underline decoration-blue-700/40 underline-offset-2 hover:decoration-blue-700 dark:text-sky-400 dark:decoration-sky-400/50 dark:hover:decoration-sky-400"
-              >
-                codexp-ai
-              </a>
-              {" "}- an AI-powered platform that explains, documents, and
-              visualizes source code, helping developers understand and onboard
-              to codebases faster. If you&apos;d like to collaborate, please{" "}
+              I&apos;m the creator of <strong>Haimiya Multi Device</strong>, a
+              WhatsApp bot project focused on automation, useful features, and
+              customizable tools. I also develop WhatsApp bots, plugin systems,
+              and scripts with an emphasis on flexibility, maintainability, and
+              performance.
+            </p>
+            <p className="mt-6 text-gray-700 dark:text-gray-300">
+              My interests include <strong>JavaScript, Node.js, Lua scripting,
+              API integration, automation systems, and web development</strong>.
+              I enjoy exploring new technologies, improving existing projects,
+              and building tools that make everyday digital tasks easier.
+            </p>
+            <p className="mt-4 text-gray-700 dark:text-gray-300">
+              I&apos;m continuously learning, building, and experimenting with
+              new ideas. Feel free to explore my projects,{" "}
               <a
                 href={`mailto:${siteMetadata.social.email}`}
                 className="border-b inline-block"
               >
                 send me an email
-              </a>{" "}
-              or reach out on any of my social handles.
+              </a>
+              , or connect with me through my social handles.
             </p>
-            
 
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 mt-5">
               {SOCIALS.map((social) => (
