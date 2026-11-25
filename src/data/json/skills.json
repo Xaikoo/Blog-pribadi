@@ -1,50 +1,32 @@
 [
   {
-    "title": "Web Design & Development",
-    "icon": "DiHtml5",
-    "iconColor": "text-orange-500",
-    "subskills": "HTML, CSS, JavaScript, TypeScript"
+    "title": "Programming Languages",
+    "icon": "DiCode",
+    "iconColor": "text-sky-500",
+    "subskills": "JavaScript, TypeScript, Python, Lua, Luau"
   },
   {
-    "title": "Frontend JavaScript Frameworks",
-    "icon": "DiReact",
-    "iconColor": "text-cyan-400",
-    "subskills": "Angular, React, Vue.js"
-  },
-  {
-    "title": "Backend JavaScript Frameworks",
+    "title": "Backend & API Development",
     "icon": "DiNodejs",
     "iconColor": "text-green-600",
-    "subskills": "Node.js, Express.js, NestJS"
+    "subskills": "Node.js, Express.js, Flask, REST API, GraphQL, JWT, WebSocket"
   },
   {
-    "title": "Scripting Languages",
-    "icon": "DiPython",
-    "iconColor": "text-yellow-400",
-    "subskills": "Python, Rust"
-  },
-  {
-    "title": "Database Management",
+    "title": "Database & Storage",
     "icon": "DiMongodb",
     "iconColor": "text-green-700",
-    "subskills": "Postgres, TypeORM, MongoDB, Mongoose"
+    "subskills": "MongoDB, MySQL, Redis"
   },
   {
-    "title": "UI/UX Design",
-    "icon": "DiCss3",
-    "iconColor": "text-blue-400",
-    "subskills": "Adobe XD, Figma, Sketch"
-  },
-  {
-    "title": "Data Processing & Machine Learning",
-    "icon": "SiNextdotjs",
-    "iconColor": "text-black dark:text-white",
-    "subskills": "LangChain, scikit-learn, TensorFlow, Keras"
-  },
-  {
-    "title": "Version Control",
+    "title": "DevOps & Infrastructure",
     "icon": "DiGit",
     "iconColor": "text-orange-600",
-    "subskills": "Git, GitHub"
+    "subskills": "Docker, Git, Linux, Nginx, PM2"
+  },
+  {
+    "title": "Roblox Development",
+    "icon": "DiVisualstudio",
+    "iconColor": "text-indigo-500",
+    "subskills": "Roblox Studio, RemoteEvent, ModuleScript, DataStore"
   }
 ]
