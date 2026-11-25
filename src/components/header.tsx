@@ -10,7 +10,6 @@ const navItems = {
   "/skill": { name: "skills" },
   "/projects": { name: "projects" },
   "/post": { name: "post" },
-  "/activity": { name: "activity" },
 };
 
 export function Header() {
@@ -32,9 +31,6 @@ export function Header() {
                   <Link
                     key={path}
                     href={path}
-                    // /activity hits GitHub Search + WakaTime on regen — don't
-                    // wake ISR via viewport prefetch from every page.
-                    prefetch={path === "/activity" ? false : undefined}
                     className={cn(
                       "flex align-middle transition-colors hover:text-neutral-900 dark:hover:text-neutral-100",
                       isActive
