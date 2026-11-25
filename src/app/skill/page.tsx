@@ -35,7 +35,7 @@ export default function SkillsPage() {
           <PanelHeader>
             <PanelTitle className="text-xl font-bold">Technical Skills</PanelTitle>
             <p className="text-sm text-muted-foreground dark:text-gray-400">
-              Technologies and tools I use across software development and digital projects.
+              Teknologi dan alat yang saya gunakan dalam pengembangan perangkat lunak serta berbagai proyek digital.
             </p>
           </PanelHeader>
           <PanelContent>
