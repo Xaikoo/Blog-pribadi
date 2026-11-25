@@ -34,10 +34,6 @@
       "title": "Erik Kurniawan",
       "description": "Blog pribadi Erik Kurniawan tentang pengembangan web dan proyek digital."
     },
-    "about": {
-      "title": "Tentang",
-      "description": "Kenali Erik Kurniawan dan perjalanan dalam pengembangan web serta proyek digital."
-    },
     "projects": {
       "title": "Proyek",
       "description": "Kumpulan proyek digital yang dibuat dan dikembangkan oleh Erik Kurniawan."
@@ -49,6 +45,10 @@
     "guestbook": {
       "title": "Buku Tamu",
       "description": "Ruang untuk pengunjung meninggalkan pesan dan berbagi kesan."
+    },
+    "skill": {
+      "title": "Skills",
+      "description": "Technical skills and tools used by Erik Kurniawan across backend development, automation, infrastructure, and Roblox development."
     }
   }
 }
