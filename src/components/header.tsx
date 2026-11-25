@@ -7,7 +7,7 @@ import React from "react";
 
 const navItems = {
   "/": { name: "home" },
-  "/about": { name: "about" },
+  "/skill": { name: "skills" },
   "/projects": { name: "projects" },
   "/post": { name: "post" },
   "/activity": { name: "activity" },
