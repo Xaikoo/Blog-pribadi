@@ -87,8 +87,8 @@ export default function Home() {
   return (
     <React.Fragment>
       <Panel className="mt-6">
-        <PanelHeader className="lg:flex lg:items-start lg:gap-10">
-          <div className="lg:w-2/3">
+        <PanelHeader className="flex items-center gap-4">
+          <div className="min-w-0 flex-1">
             <h1 className="text-2xl font-bold flex items-center gap-2">
               {siteMetadata.author}
               <VerifiedIcon
@@ -103,7 +103,6 @@ export default function Home() {
                   "Creator of Haimiya Multi Device",
                   "WhatsApp Bot Developer",
                   "Automation & Integration Developer",
-                  "Digital Project Builder",
                 ]}
               />
             </p>
@@ -112,39 +111,31 @@ export default function Home() {
               {siteMetadata.location.city}, {siteMetadata.location.country}
             </p>
           </div>
+          <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full shadow-xl ring-1 ring-black/5 dark:ring-white/10 outline outline-2 outline-offset-2 outline-sky-500/30 dark:outline-sky-400/30 sm:h-24 sm:w-24">
+            <Image
+              src="/assets/ErikKurniawan-profile.jpeg"
+              alt={`${siteMetadata.author} — avatar`}
+              priority
+              fetchPriority="high"
+              fill
+              sizes="(min-width: 640px) 6rem, 5rem"
+              className="object-cover object-center"
+            />
+          </div>
         </PanelHeader>
 
-        <PanelContent className="lg:flex lg:flex-row lg:items-start gap-10">
+        <PanelContent>
           <div className="lg:w-2/3 text-center lg:text-left">
             <p className="mt-2 text-gray-700 dark:text-gray-300">
-              I build modular plugins, custom scripts, and practical digital tools
-              designed to make software more flexible, useful, and easier to
-              maintain. I enjoy turning ideas into reliable features and
-              well-structured projects.
-            </p>
-            <p className="mt-6 text-gray-700 dark:text-gray-300">
-              I&apos;m the creator of <strong>Haimiya Multi Device</strong>, a
-              WhatsApp bot project focused on automation, useful features, and
-              customizable tools. I also develop WhatsApp bots, plugin systems,
-              and scripts with an emphasis on flexibility, maintainability, and
-              performance.
-            </p>
-            <p className="mt-6 text-gray-700 dark:text-gray-300">
-              My interests include <strong>JavaScript, Node.js, Lua scripting,
-              API integration, automation systems, and web development</strong>.
-              I enjoy exploring new technologies, improving existing projects,
-              and building tools that make everyday digital tasks easier.
+              I build modular plugins, custom scripts, and automation tools.
             </p>
             <p className="mt-4 text-gray-700 dark:text-gray-300">
-              I&apos;m continuously learning, building, and experimenting with
-              new ideas. Feel free to explore my projects,{" "}
-              <a
-                href={`mailto:${siteMetadata.social.email}`}
-                className="border-b inline-block"
-              >
-                send me an email
-              </a>
-              , or connect with me through my social handles.
+              Creator of <strong>Haimiya Multi Device</strong>, a WhatsApp bot
+              project focused on automation and customizable features.
+            </p>
+            <p className="mt-4 text-gray-700 dark:text-gray-300">
+              Focused on <strong>JavaScript, Node.js, Lua, API Integration,
+              and Web Development.</strong>
             </p>
 
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 mt-5">
@@ -168,19 +159,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lg:w-1/3 flex justify-center lg:justify-end lg:mt-0 mt-6">
-            <div className="relative w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60 rounded-full overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10 outline outline-2 outline-offset-2 outline-sky-500/30 dark:outline-sky-400/30 max-w-sm mx-auto">
-              <Image
-                src="/assets/ErikKurniawan-profile.jpeg"
-                alt={`${siteMetadata.author} — avatar`}
-                priority
-                fetchPriority="high"
-                fill
-                sizes="(min-width: 768px) 15rem, 13rem"
-                className="object-cover object-center"
-              />
-            </div>
-          </div>
         </PanelContent>
       </Panel>
 
