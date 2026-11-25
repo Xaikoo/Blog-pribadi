@@ -8,9 +8,9 @@ export function Skills() {
         {SKILLS.map((skill) => (
           <div
             key={skill.title}
-            className="px-3 py-2 border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/30 dark:hover:border-neutral-50/30 rounded flex items-center gap-3 transition-colors duration-700 hover:duration-100 bg-white dark:bg-dark-bg min-h-0"
+            className="px-3 py-2 border border-neutral-900/10 dark:border-neutral-50/10 hover:border-neutral-900/30 dark:hover:border-neutral-50/30 rounded flex items-start gap-3 transition-colors duration-700 hover:duration-100 bg-white dark:bg-dark-bg min-h-0"
           >
-            <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center">
+            <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center mt-1">
               {React.cloneElement(skill.icon as React.ReactElement<{ className?: string }>, {
                 className: `${
                   (skill.icon.props as { className?: string }).className || ""
@@ -18,10 +18,10 @@ export function Skills() {
               })}
             </div>
             <div className="min-w-0 flex-1 flex flex-col">
-              <strong className="truncate text-sm font-semibold text-gray-900 dark:text-white mb-0.5">
+              <strong className="whitespace-normal break-words leading-snug text-sm font-semibold text-gray-900 dark:text-white mb-0.5">
                 {skill.title}
               </strong>
-              <small className="truncate text-xs text-gray-600 dark:text-gray-300">
+              <small className="whitespace-normal break-words leading-relaxed text-xs text-gray-600 dark:text-gray-300">
                 ({skill.subskills})
               </small>
             </div>
