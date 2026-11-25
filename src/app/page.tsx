@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowUpRight, FileText, MapPin, MessageSquareText } from "lucide-react";
+import { ArrowUpRight, MapPin, MessageSquareText } from "lucide-react";
 
 import { SOCIALS } from "@/data/socials";
 import { FEATURED_PROJECTS, type Project } from "@/data/projects";
@@ -142,28 +142,21 @@ export default function Home() {
               {SOCIALS.map((social) => (
                 <SocialLink
                   key={social.label}
-                  aria-label={`Follow on ${social.label}`}
+                  aria-label={`Contact via ${social.label}`}
                   href={social.href}
                   icon={social.icon}
+                  iconClassName={
+                    social.label === "WhatsApp"
+                      ? "h-6 w-6 flex-none text-[#25D366] transition-opacity group-hover:opacity-80"
+                      : "group-hover:fill-primary h-6 w-6 flex-none fill-zinc-500 hover:fill-zinc-200 transition"
+                  }
                 />
               ))}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-bold border-b transition-all text-gray-400 dark:text-gray-300 hover:text-neutral-800 dark:hover:text-neutral-200"
-              >
-                <FileText className="size-4" aria-hidden="true" />
-                Resume
-              </a>
             </div>
           </div>
-
         </PanelContent>
       </Panel>
 
-
-      {/* Featured work */}
       {FEATURED_PROJECTS.length > 0 && (
         <Panel id="work" className="mt-8">
           <PanelHeader>
@@ -186,7 +179,7 @@ export default function Home() {
           </PanelContent>
         </Panel>
       )}
-      {/* Guestbook strip */}
+
       <Link
         href="/guestbook"
         className="group mt-8 flex items-center justify-between gap-3 border border-gray-200 dark:border-gray-800 bg-white dark:bg-dark-bg px-4 py-3 transition-colors hover:border-teal-500/40 hover:bg-teal-500/[0.03]"
